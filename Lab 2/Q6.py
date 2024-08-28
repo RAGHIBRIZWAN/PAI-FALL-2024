@@ -1,14 +1,9 @@
-def isPalindrome(word):
-    i = 0
-    j = len(word)-1
+def listmul(mult):
+    mul = 1
+    for i in range(len(mult)):
+        mul *= mult[i]
 
-    while(i < j):
-        if(word[i] == word[j]):
-            i += 1
-            j -= 1
-        else:
-            return 'Not a Palindrome'
-    return 'Palindrome'
+    return mul
 
-word = str(input('Enter the word: '))
-print(isPalindrome(word))
+mult = [2, 3, 4, 5]
+print(listmul(mult))
