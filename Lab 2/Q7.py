@@ -31,7 +31,7 @@ def remove(temp,day):
         print("Day index out of range.")
     return temp
 
-temp = [4,2,3,1,5,6,7,8,9,10]
+temp = [4,2,3,1,5,6,7,8,9,10,11,12,14,15,18,17,18,95,98,45,78,54,58,5,25,21,48,95,85,87]
 print(avg(temp))
 print(highLow(temp))
 print(ascending(temp))
