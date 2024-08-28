@@ -1,8 +1,12 @@
-def fact(num):
-    if num == 0 or num == 1:
-        return 1
-    else:
-        return num * fact(num - 1)
+def employee(name,salary = 10000):
+    tax = salary * (2 / 100)
 
-num = int(input('Enter the num: '))
-print(fact(num))
+    salary -= tax
+
+    return salary,name
+
+name = str(input('Enter the name: '))
+salary = int(input('Enter the salary: '))
+
+print(employee(name,salary))
+print(employee(name))
