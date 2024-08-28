@@ -1,9 +1,8 @@
-def listmul(mult):
-    mul = 1
-    for i in range(len(mult)):
-        mul *= mult[i]
+def fact(num):
+    if num == 0 or num == 1:
+        return 1
+    else:
+        return num * fact(num - 1)
 
-    return mul
-
-mult = [2, 3, 4, 5]
-print(listmul(mult))
+num = int(input('Enter the num: '))
+print(fact(num))
