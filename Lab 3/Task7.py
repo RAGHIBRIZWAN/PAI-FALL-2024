@@ -1,16 +1,21 @@
-def replaceLetter(wrong,correct):
+def replaceLetter(wrong,correct,word):
     try:
         with open('replacement_needed.txt','r') as fileObj:
             content = fileObj.read()
-        correctedContent = ''
-        for char in content:
-            if char == wrong:
-                correctedContent += correct
+        
+        newWord = ''
+        length = len(word)
+        index = 0
+
+        while index < length:
+            if word[index] == wrong:
+                newWord += correct
             else:
-                correctedContent += char
+                newWord += word[index]
+            index += 1
 
-        print('Corrected content: ',correctedContent)
-
+        update = content.replace(word,newWord)
+        
     except FileNotFoundError:
         print("The file does not exist.")
     except IOError:
@@ -20,7 +25,8 @@ def replaceLetter(wrong,correct):
 
     try:
         with open('replacement_needed.txt','w') as fileObj:
-            fileObj.write(correctedContent)
+            fileObj.write(update)
+        print("File updated successfully.")
     except FileNotFoundError:
         print("The file does not exist.")
     except IOError:
@@ -28,6 +34,4 @@ def replaceLetter(wrong,correct):
     except Exception as e:
         print(str(e))
 
-    
-
-replaceLetter('S','R')
+replaceLetter('S','R','Saghib')
