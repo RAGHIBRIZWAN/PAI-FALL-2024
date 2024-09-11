@@ -5,5 +5,6 @@ d = ''
 for i in range(len(a)):
     c.append(a[i] + b[i])
     d += a[i] + b[i]
+    d += ' '
 print(c)
 print(d)
