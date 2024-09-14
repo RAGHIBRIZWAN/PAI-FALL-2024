@@ -1,35 +1,46 @@
 class Restaurant:
     menu_items = []
-    book_table = []
-    customer_orders = []
-    check = True
-    yes = True
-    while(yes):
-        def add_item_to_menu(self):
-        a = int(input('Enter the menu items: '))
-        menu_items.append(a)
-        print('Item added successfully!')
+    book_table = {}
+    customer_orders = {}
+    check = False
+
+    def add_item_to_menu(self,item):
+        self.menu_items.append(item)
         
-    def book_tables(self):
-        while(check):
-            a = int(input('Enter the table number you want to book: '))
-            if(!find(a)):
-            book_table.append(a)
-            print('Your table is booked!')
-            check = False
+    def book_tables(self,tableNum):
+        while(self.check):
+            if self.book_table['Table' + str(tableNum) == 'Booked']:
+                print('Sorry! Table is already booked!')
         else:
-            print('Sorry! Table is already booked!')
+                self.book_table['Table' + str(tableNum)] = 'Booked'
+                print('Your table is booked!')
+                check = False
         
-    def customer_order(self):
-        a = int(input('Enter the number of items: '))
-        for i in range(a):
-            b = str(input('Enter the name of meal: '))
-            for j in range(len(menu_items)):
-                if(b == menu_items[j]):
-                    customer_orders.append(b)
-                    print(f"{b} is available")
-                    break
-                else:
-                    print(f"{b} is not available")
-                    
-                    
+    def customer_order(self,meal,quantity):
+        self.customer_orders[meal] = quantity
+
+    def show_Menu(self):
+         print(f"Menu: {self.menu_items}")
+        
+    def show_Booked_Tables(self):
+         print(f"Booked Tables: {self.book_table}")
+
+    def show_Customer_Order(self):
+         print(f"Customer Order: {self.customer_orders}")
+
+cust1 = Restaurant()
+cust1.add_item_to_menu('Biryani')                    
+cust1.add_item_to_menu('Zarda')                    
+cust1.add_item_to_menu('Korma')                    
+cust1.add_item_to_menu('Roti')
+cust1.add_item_to_menu('Pizza')
+cust1.add_item_to_menu('Burger')
+cust1.book_tables(1)
+
+cust1.customer_order('Biryani',2)
+cust1.customer_order('Korma',2)
+cust1.customer_order('Roti',10)
+
+cust1.show_Menu()
+cust1.show_Booked_Tables()
+cust1.show_Customer_Order()
