@@ -21,7 +21,7 @@ class Vehicle:
         return days * self.rental_price
     
     def display_details(self):
-        print(f"Vehicle: {self.make} {self.model}, Rental Price: ${self.rental_price} per day, "
+        print(f"Vehicle: {self.make} {self.model}, Rental Price: PKR {self.rental_price} per day, "
               f"Available: {'Yes' if self.is_available else 'No'}")
 
 class Car(Vehicle):
@@ -77,7 +77,7 @@ truck = Truck("Ford", "Mustang-GT", 50000)
 
 customer = Customer("Raghib", "+923340030844")
 
-days = 6  # Renting for 6 days
+days = 6 
 reservation = RentalReservation(car, customer, days)
 
 reservation.process_rental()
