@@ -7,9 +7,9 @@ a = arr.reshape(3,3)
 def mul(x,y):
     return x*y
 
-myAdd = np.frompyfunc(mul,2,1)
+myMul = np.frompyfunc(mul,2,1)
 
-b = myAdd(a,4)
+b = myMul(a,4)
 
 c = np.multiply(np.eye(3,3),b)
 
