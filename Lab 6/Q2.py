@@ -5,7 +5,7 @@ Movie_data = {
     "Movie Runtime": [78, 67, 89, 104]
 }
 
-df = pd.DataFrame(Movie_data,index=[1, 2, 3, 4, 5])
+df = pd.DataFrame(Movie_data,index=[1, 2, 3, 4])
 movies = df.sort_index(ascending= False)
 
 print("Sorted movies based in descending order.: ")
