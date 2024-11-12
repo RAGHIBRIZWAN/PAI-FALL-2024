@@ -30,7 +30,7 @@ plt.show()
 
 plt.figure()
 sns.scatterplot(data=df)
-plt.title("Scatter plot of Wine)
+plt.title("Scatter plot of Wine")
 plt.show()
 
 plt.figure(figsize=(10, 10))
